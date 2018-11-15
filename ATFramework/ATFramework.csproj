@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>ATFramework.ATLog.LogTest</StartupObject>
+    <StartupObject>ATFramework.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ATFileHelper\ATFileOp.cs" />
     <Compile Include="ATLog\ATLogListener.cs" />
     <Compile Include="ATLog\LogConstant.cs" />
     <Compile Include="ATLog\LogManager.cs" />
