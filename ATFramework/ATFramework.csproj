@@ -69,4 +69,18 @@
     <Folder Include="ATValidator\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>@echo ------------------------------------------
+@echo [$(ProjectDir)] 生成成功,正在复制
+
+set solutionName="$(SolutionName)"
+set targetName="AutoTool"
+
+if %25solutionName%25 equ %25targetName%25 (
+xcopy $(TargetPath) $(SolutionDir)libs\ /e /y
+)
+@echo 复制完成
+
+</PostBuildEvent>
+  </PropertyGroup>
 </Project>
