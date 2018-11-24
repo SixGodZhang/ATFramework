@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 
-namespace ATFramework.ATLog
+namespace ATFramework.Log
 {
     internal class ATLogListener : TraceListener
     {
@@ -24,31 +24,31 @@ namespace ATFramework.ATLog
         public override void Write(string message)
         {
             message = Format(message, "");
-            File.AppendAllText(m_logFileName, message);
+            global::System.IO.File.AppendAllText(m_logFileName, message);
         }
 
         public override void WriteLine(string message)
         {
             message = Format(message, "");
-            File.AppendAllText(m_logFileName, message);
+            global::System.IO.File.AppendAllText(m_logFileName, message);
         }
 
         public override void WriteLine(object o)
         {
             string message = Format(o, "");
-            File.AppendAllText(m_logFileName, message);
+            global::System.IO.File.AppendAllText(m_logFileName, message);
         }
 
         public override void WriteLine(string message, string category)
         {
             message = Format(message, category);
-            File.AppendAllText(m_logFileName, message);
+            global::System.IO.File.AppendAllText(m_logFileName, message);
         }
 
         public override void WriteLine(object o, string category)
         {
             string message = Format(o, category);
-            File.AppendAllText(m_logFileName, message);
+            global::System.IO.File.AppendAllText(m_logFileName, message);
         }
 
         private string Format(object obj, string category)

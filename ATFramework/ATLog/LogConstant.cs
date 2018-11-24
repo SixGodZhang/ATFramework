@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ATFramework.ATLog
+namespace ATFramework.Log
 {
     internal class LogConstant
     {

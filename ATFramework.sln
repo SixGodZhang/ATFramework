@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATFramework", "ATFramework\ATFramework.csproj", "{5AD330DF-615A-45E3-80DE-20AE5650A9D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATFrameworkTest", "ATFrameworkTest\ATFrameworkTest.csproj", "{6EFB671C-8C60-423E-B135-E4C6F207EC57}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5AD330DF-615A-45E3-80DE-20AE5650A9D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AD330DF-615A-45E3-80DE-20AE5650A9D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AD330DF-615A-45E3-80DE-20AE5650A9D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EFB671C-8C60-423E-B135-E4C6F207EC57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EFB671C-8C60-423E-B135-E4C6F207EC57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EFB671C-8C60-423E-B135-E4C6F207EC57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EFB671C-8C60-423E-B135-E4C6F207EC57}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

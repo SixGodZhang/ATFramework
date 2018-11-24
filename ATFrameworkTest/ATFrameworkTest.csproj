@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5AD330DF-615A-45E3-80DE-20AE5650A9D3}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>ATFramework</RootNamespace>
-    <AssemblyName>ATFramework</AssemblyName>
+    <ProjectGuid>{6EFB671C-8C60-423E-B135-E4C6F207EC57}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ATFrameworkTest</RootNamespace>
+    <AssemblyName>ATFrameworkTest</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,10 +32,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>
-    </StartupObject>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,26 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ATBat\BatTool.cs" />
-    <Compile Include="ATFileHelper\ATFileOp.cs" />
-    <Compile Include="ATLog\ATLogListener.cs" />
-    <Compile Include="ATLog\LogConstant.cs" />
-    <Compile Include="ATLog\LogManager.cs" />
-    <Compile Include="ATLog\LogTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="System\ATConvert.cs" />
-    <Compile Include="System\ATEnum.cs" />
-    <Compile Include="System\ATInteger.cs" />
-    <Compile Include="System\ATStackTraceInfo.cs" />
-    <Compile Include="System\ATEncrypt.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ATDataAnnotations\" />
-    <Folder Include="ATValidator\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -3,7 +3,7 @@
 using System.Diagnostics;
 using System.IO;
 
-namespace ATFramework.ATLog
+namespace ATFramework.Log
 {
     public class ATLog
     {
@@ -69,7 +69,7 @@ namespace ATFramework.ATLog
                 string[] logsPath = Directory.GetFiles(LogConstant.LogFolder);
                 for (int i = 0; i < logsPath.Length; i++)
                 {
-                    File.Delete(logsPath[i]);
+                    global::System.IO.File.Delete(logsPath[i]);
                 }
             }
         }
