@@ -3,6 +3,7 @@ using ATFramework.Main;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading;
 
 namespace ATFramework.FileOp
 {
@@ -11,11 +12,7 @@ namespace ATFramework.FileOp
     /// </summary>
     public class ATFileOp
     {
-
-        static void Main(string[] args)
-        {
-
-        }
+        private static readonly object Sync = new object();
 
         /// <summary>
         /// 使用Window系统文件浏览器打开文件
@@ -42,32 +39,38 @@ namespace ATFramework.FileOp
         /// <returns></returns>
         public static string WriteToFile(string filePath, string content, FileMode mode = FileMode.OpenOrCreate)
         {
-            if (!File.Exists(filePath))
-                mode = FileMode.OpenOrCreate;
 
-            string error = null;
-            FileStream fs = null;
-            StreamWriter sw = null;
+            Console.WriteLine("Name: " + Thread.CurrentThread.Name + "  ,content:" + string.IsNullOrWhiteSpace(content));
 
-            try
+            lock (Sync)
             {
-                fs = new FileStream(filePath, mode, FileAccess.Write);
-                sw = new StreamWriter(fs);
-                sw.WriteLine(content);
-            }
-            catch (Exception ex)
-            {
-                error = ex.Message;
-                ATLog.Error(ex.Message + "\n" + ex.StackTrace);
+                if (!File.Exists(filePath))
+                    mode = FileMode.OpenOrCreate;
+
+                string error = null;
+                FileStream fs = null;
+                StreamWriter sw = null;
+
+                try
+                {
+                    fs = new FileStream(filePath, mode, FileAccess.Write);
+                    sw = new StreamWriter(fs);
+                    sw.WriteLine(content);
+                }
+                catch (Exception ex)
+                {
+                    error = ex.Message;
+                    ATLog.Error(ex.Message + "\n" + ex.StackTrace);
+                    return error;
+                }
+                finally
+                {
+                    if (sw != null)
+                        sw.Close();
+                }
+
                 return error;
             }
-            finally
-            {
-                if (sw != null)
-                    sw.Close();
-            }
-
-            return error;
         }
 
         /// <summary>
